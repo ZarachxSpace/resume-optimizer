@@ -1,0 +1,280 @@
+/* Reset & General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main Page Wrapper - Ensures Scrollability */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 50px; /* Ensures space for footer */
+}
+
+/* Main Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: 30px;
+}
+
+/* Centering Content */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #007bff;
+}
+
+/* Explanation Box */
+.explanation {
+  background: #eef5ff;
+  border-left: 5px solid #007bff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #333;
+  max-width: 90%;
+}
+
+/* Job Description Styling */
+.job-description-container {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Centered File Upload */
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+}
+
+/* Drag & Drop Text */
+.drag-drop-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Ensuring Filename is Displayed Neatly */
+#file-name {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Results & Roast Display */
+.results-container, .roast-container {
+  width: 100%;
+  max-width: 700px;
+  padding: 15px;
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  word-wrap: break-word;
+}
+
+/* Improving Readability & Formatting for Roast Feedback */
+.roast-container ul {
+  padding-left: 20px;
+}
+
+.roast-container li {
+  background: #eef5ff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  list-style-type: disc;
+  color: #333;
+}
+
+/* Color-Coded Score Breakdown */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.result-item {
+  padding: 10px;
+  border-radius: 5px;
+  background: #eef5ff; /* Light blue background for contrast */
+  color: #333; /* Ensuring text visibility */
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Making Sure the Page is Fully Responsive */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  .results-container, .roast-container {
+    font-size: 14px;
+  }
+}
+
+/* Footer - Pushed to Bottom */
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  color: #666;
+  padding-bottom: 20px;
+}
+
+/* Dark Mode Compatibility */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #181818;
+    color: #f5f5f5;
+  }
+
+  .container {
+    background: #222;
+    color: #fff;
+  }
+
+  /* Fix all headers in dark mode */
+  h1, h2 {
+    color: #ffffff !important; /* Ensure white text in dark mode */
+    font-weight: bold;
+  }
+
+  /* Ensure text inside input fields is visible */
+  textarea, input {
+    color: #fff !important;
+    background-color: #333 !important;
+    border: 1px solid #555;
+  }
+
+  /* Fix buttons */
+  button {
+    background-color: #3498db;
+    color: #fff;
+  }
+
+  button:hover {
+    background-color: #1c7ed6;
+  }
+
+  /* Fix results & feedback containers */
+  .results-container,
+  .roast-container {
+    background: #2a2a2a;
+    color: #ffffff !important;
+  }
+
+  .results-container p,
+  .roast-container p {
+    color: #ffffff !important;
+  }
+
+  /* Ensure score breakdown is readable */
+  .result-item {
+    background: #444;
+    color: #ffffff;
+  }
+
+  /* Fix feedback text */
+  .roast-container li {
+    background: #444;
+    color: #ffffff;
+  }
+
+  /* Fix file name visibility */
+  #file-name {
+    color: #bbb;
+  }
+}
