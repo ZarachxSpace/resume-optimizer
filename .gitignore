@@ -1,0 +1,48 @@
+# ========== GENERAL ==========
+.DS_Store  # macOS metadata files
+Thumbs.db  # Windows metadata files
+.idea/     # JetBrains (PyCharm, WebStorm, etc.)
+.vscode/   # VS Code workspace settings
+*.log      # Log files
+*.pyc      # Python cache files
+__pycache__/  # Python bytecode cache
+
+# ========== PYTHON BACKEND ==========
+venv/        # Virtual environment
+.venv/       # Alternative virtual environment names
+.venv1/      # Your Pycharm-generated virtual environment
+env/         # Another common virtual environment folder name
+alembic/     # Migration cache (optional)
+*.sqlite3     # Local SQLite database files
+*.db         # Any other database files
+instance/    # Flask instance folder (if applicable)
+config.py    # Configuration file (if used)
+.env         # Environment variables (should never be committed)
+.env.local   # Local overrides
+
+# ========== NODE.JS FRONTEND ==========
+node_modules/  # Huge dependency folder (always regenerate on install)
+dist/          # Build output for production
+.cache/        # Vite/Webpack cache
+public/build/  # Build output (if applicable)
+npm-debug.log* # Debug logs from npm
+yarn-debug.log* # Debug logs from yarn
+yarn-error.log* # Error logs from yarn
+package-lock.json # If you use Yarn instead of npm
+.pnp/         # Yarn Plug’n’Play folder
+
+# ========== TESTING & DEBUGGING ==========
+*.coverage   # Code coverage reports
+*.pytest_cache # Pytest cache
+junit.xml    # Test reports
+test-reports/ # Any custom test report folders
+
+# ========== DEPLOYMENT FILES ==========
+*.pem        # SSH keys for server access (should **never** be in Git!)
+*.crt        # SSL certificates
+*.key        # Private keys
+*.pfx        # Encrypted keys
+
+# ========== MISC ==========
+logs/        # General log files folder
+local_settings.py  # Local Django settings (if applicable)
