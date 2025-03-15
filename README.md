@@ -16,13 +16,13 @@ This project evaluates resumes against job descriptions using AI, providing ATS-
 resume-optimizer/
 │── backend/
 │   ├── app/
-│   │   ├── models/                # Database models
+│   │   ├── models/                # ignore
 │   │   ├── routes/                # API endpoints
 │   │   │   ├── resume.py          # Resume processing API
 │   │   ├── services/              # Resume analysis logic
 │   │   │   ├── resume_processing.py
-│   │   ├── tests/                 # Unit tests
-│   │   ├── utils/                 # Utility functions
+│   │   ├── tests/                 # ignore
+│   │   ├── utils/                 # ignore
 │   │   └── main.py                # FastAPI entry point
 │   ├── database/                  # Database migrations
 │   ├── requirements.txt           # Python dependencies
@@ -39,7 +39,7 @@ resume-optimizer/
 │── .gitignore                      # Ignored files
 │── README.md                        # Documentation
 │── alembic.ini                      # Alembic migrations config
-│── temp_resume.pdf (ignored)         # Temporary resume storage
+│── temp_resume.pdf                  # Temporary resume storage
 │── .venv/ (ignored)                  # Virtual environment
 ```
 
@@ -109,16 +109,6 @@ npm run dev
 ```
 The application should now be running at:  
 `http://localhost:5173`
-
----
-
-## Running the Project on a New System
-
-If running this on a new system:
-1. Clone the repository.
-2. Install backend and frontend dependencies.
-3. Set up PostgreSQL and apply migrations.
-4. Start the backend and frontend servers.
 
 ---
 
