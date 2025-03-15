@@ -1,13 +1,16 @@
 # AI Resume Optimizer
 
-This project evaluates resumes against job descriptions using AI, providing ATS-based scores, keyword matching, and structured feedback.
+This project is an AI-powered Resume Analyzer and Critique Tool. It evaluates resumes against job descriptions, providing an ATS (Applicant Tracking System) score, keyword matches, and feedback for improvement. It runs a local LLM (Ollama with Llama 2) but can be configured to use an API-based online LLM for AWS deployment.
 
 ## Features
 
-- Resume Analysis – Matches resumes with job descriptions based on ATS, technical skills, experience, and semantic similarity.
-- Keyword Matching – Identifies missing keywords relevant to the job description.
-- Structured Feedback – Provides specific suggestions for improving the resume.
-- Simple Interface – Upload a resume, enter a job description, and get real-time analysis.
+- ATS score calculation
+- Keyword and phrase matching
+- Technical, experience, and skills match analysis
+- LLM-powered resume critque
+- Local LLM support
+- Optional API-based LLM integration for AWS deployment
+
 
 ---
 
@@ -49,16 +52,16 @@ resume-optimizer/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/resume-optimizer.git
+git clone https://github.com/ZarachxSpace/resume-optimizer.git
 cd resume-optimizer
 ```
 
 ### 2. Create a Virtual Environment
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # macOS/Linux
-# OR
-.venv\Scripts\activate  # Windows
+cd resume-optimizer  
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+pip install -r backend/requirements.txt  # Install backend dependencies
 ```
 
 ### 3. Install Dependencies
@@ -112,6 +115,43 @@ The application should now be running at:
 
 ---
 
+## Running the Local LLM (Ollama + Llama 2)
+
+This project uses a local LLM for resume critique. To install and run it:
+
+### 1. Install Ollama
+```bash
+curl -fsSL https://ollama.ai/install.sh | sh  # For macOS & Linux
+```
+For Windows, follow Ollama installation guide.
+
+### 2. Pull and Run Llama 2
+```
+ollama pull llama2
+ollama run llama2
+```
+### 3. API Integration (Ollama Local API)
+
+By default, the backend calls the local LLM at:
+```
+http://localhost:11434/api/generate
+```
+**Ensure Ollama is running before making requests.**
+
+## Using an Online LLM API for AWS Deployment
+
+If you plan to deploy the project on AWS and use an online LLM API instead of a local LLM:
+
+1. Update the API URL in `backend/app/routes/resume.py`: 
+```
+OLLAMA_API_URL = "https://your-online-llm-api.com/v1/generate"
+```
+2. Ensure authentication credentials are set if required.
+
+3. Comment out local LLM execution in `resume_processing.py`.
+
+---
+<!--
 ## Deployment to AWS
 
 ### 1. Deploy Backend to AWS EC2
@@ -161,7 +201,7 @@ The application should now be running at:
 3. Configure **CloudFront** for a public URL.
 
 ---
-
+-->
 ## API Endpoints
 
 | Method | Endpoint | Description |
@@ -176,7 +216,6 @@ The application should now be running at:
 - Improve Scoring Algorithm
 - Enhance Resume Feedback
 - Deploy to AWS Lambda
-- Build a Mobile-Friendly UI
 - Support Multiple Resume Formats (DOCX, TXT)
 
 ---
