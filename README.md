@@ -1,6 +1,6 @@
 # AI Resume Optimizer
 
-This project is an AI-powered Resume Analyzer and Critique Tool. It evaluates resumes against job descriptions, providing an ATS (Applicant Tracking System) score, keyword matches, and feedback for improvement. It runs a local LLM (Ollama with Llama 2) but can be configured to use an API-based online LLM for AWS deployment.
+This project is an AI-powered Resume Analyzer and Feedback platform. It evaluates resumes against job descriptions, providing an ATS (Applicant Tracking System) score, keyword matches, and feedback for improvement. It runs a local LLM (Ollama with Llama 2) but can be configured to use an API-based online LLM for AWS deployment.
 
 ## Features
 
